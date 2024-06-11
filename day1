@@ -1,0 +1,532 @@
+
+katta yashwanth@ACER7 MINGW64 ~
+$ cd vctrainingproject
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingproject
+$ cd..
+bash: cd..: command not found
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingproject
+$ cd ..
+
+katta yashwanth@ACER7 MINGW64 ~
+$ git config --global user.name "yashwanthkatta333"
+
+katta yashwanth@ACER7 MINGW64 ~
+$ git config --global user.email "yashwanth.k@vigocare.com"
+
+katta yashwanth@ACER7 MINGW64 ~
+$ git config --global list
+error: key does not contain a section: list
+
+katta yashwanth@ACER7 MINGW64 ~
+$ git config --global --list
+filter.lfs.required=true
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+user.name=yashwanthkatta333
+user.email=yashwanth.k@vigocare.com
+
+katta yashwanth@ACER7 MINGW64 ~
+$ git clone https://github.com/yashwanthkatta333/vctraining.git
+Cloning into 'vctraining'...
+warning: You appear to have cloned an empty repository.
+
+katta yashwanth@ACER7 MINGW64 ~
+$ cd vctraining
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ echo "This is the first text file created in vigocare training" >> first.txt
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ ls
+first.txt
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ git add .
+warning: in the working copy of 'first.txt', LF will be replaced by CRLF the next time Git touches it
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ git commit -m "creating first file"
+[main (root-commit) 91bf51f] creating first file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 first.txt
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ git push origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/yashwanthkatta333/vctraining.git'
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ git push origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 276 bytes | 276.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/yashwanthkatta333/vctraining.git
+ * [new branch]      main -> main
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   first.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ git add .
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ git commit -m "modifying first file"
+[main 89b7f3a] modifying first file
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ git push origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/yashwanthkatta333/vctraining.git'
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 322 bytes | 322.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/yashwanthkatta333/vctraining.git
+   91bf51f..89b7f3a  main -> main
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ git log
+commit 89b7f3a77abf014ce7ab4de1475cc80f4b545610 (HEAD -> main, origin/main)
+Author: yashwanthkatta333 <yashwanth.k@vigocare.com>
+Date:   Tue Jun 11 15:49:34 2024 +0530
+
+    modifying first file
+
+commit 91bf51fa7eddb43bd921d42d615fcba8d027700d
+Author: yashwanthkatta333 <yashwanth.k@vigocare.com>
+Date:   Tue Jun 11 15:46:57 2024 +0530
+
+    creating first file
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ git branch branch1
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ git checkout branch1
+Switched to branch 'branch1'
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (branch1)
+$ echo "creating first file in branch1" >> branch1file1.txt
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (branch1)
+$ git status
+On branch branch1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        branch1file1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (branch1)
+$ git add .
+warning: in the working copy of 'branch1file1.txt', LF will be replaced by CRLF the next time Git touches it
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (branch1)
+$ git commit -m "first branch is created"
+[branch1 ed06c58] first branch is created
+ 1 file changed, 1 insertion(+)
+ create mode 100644 branch1file1.txt
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (branch1)
+$ git push origin branch1
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 321 bytes | 29.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'branch1' on GitHub by visiting:
+remote:      https://github.com/yashwanthkatta333/vctraining/pull/new/branch1
+remote:
+To https://github.com/yashwanthkatta333/vctraining.git
+ * [new branch]      branch1 -> branch1
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (branch1)
+$ git log
+commit ed06c58435750e197629fb2ad4422edbc1613b4c (HEAD -> branch1, origin/branch1)
+Author: yashwanthkatta333 <yashwanth.k@vigocare.com>
+Date:   Tue Jun 11 15:53:22 2024 +0530
+
+    first branch is created
+
+commit 89b7f3a77abf014ce7ab4de1475cc80f4b545610 (origin/main, main)
+Author: yashwanthkatta333 <yashwanth.k@vigocare.com>
+Date:   Tue Jun 11 15:49:34 2024 +0530
+
+    modifying first file
+
+commit 91bf51fa7eddb43bd921d42d615fcba8d027700d
+Author: yashwanthkatta333 <yashwanth.k@vigocare.com>
+Date:   Tue Jun 11 15:46:57 2024 +0530
+
+    creating first file
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (branch1)
+$ git merge branch1
+Already up to date.
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (branch1)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ git merge branch1
+Updating 89b7f3a..ed06c58
+Fast-forward
+ branch1file1.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 branch1file1.txt
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ git push origin main
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/yashwanthkatta333/vctraining.git
+   89b7f3a..ed06c58  main -> main
+
+katta yashwanth@ACER7 MINGW64 ~/vctraining (main)
+$ cd ..
+
+katta yashwanth@ACER7 MINGW64 ~
+$ mkdir vctrainingremoterepo
+
+katta yashwanth@ACER7 MINGW64 ~
+$ cd vctrainingremoterepo
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo
+$ echo "This is the first text file created in laptop locally in training" >> first.txt
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo
+$ ls
+first.txt
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo
+$ git remote add origin https://github.com/yashwanthkatta333/remoterepository.git
+fatal: not a git repository (or any of the parent directories): .git
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo
+$ git remote add origin https://github.com/yashwanthkatta333/remoterepository.git
+fatal: not a git repository (or any of the parent directories): .git
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo
+$ git remote add origin https://github.com/yashwanthkatta333/first-project.git
+fatal: not a git repository (or any of the parent directories): .git
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo
+$ git remote add origin https://github.com/yashwanthkatta333/first-project1.git
+fatal: not a git repository (or any of the parent directories): .git
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo
+$ git init
+Initialized empty Git repository in C:/Users/katta yashwanth/vctrainingremoterepo/.git/
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo (master)
+$ git remote add origin https://github.com/yashwanthkatta333/remoterepository.git
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        first.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo (master)
+$ git add .
+warning: in the working copy of 'first.txt', LF will be replaced by CRLF the next time Git touches it
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo (master)
+$ git commit -m "repository imported from local files"
+[master (root-commit) 9fb2e9f] repository imported from local files
+ 1 file changed, 1 insertion(+)
+ create mode 100644 first.txt
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo (master)
+$ git push add origin master
+error: src refspec origin does not match any
+error: failed to push some refs to 'add'
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo (master)
+$ git push origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/yashwanthkatta333/remoterepository.git'
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo (master)
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 294 bytes | 294.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/yashwanthkatta333/remoterepository.git
+ * [new branch]      master -> master
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo (master)
+$ git log
+commit 9fb2e9f4c49ce748bee74e321cca1032555024bc (HEAD -> master, origin/master)
+Author: yashwanthkatta333 <yashwanth.k@vigocare.com>
+Date:   Tue Jun 11 16:14:59 2024 +0530
+
+    repository imported from local files
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo (master)
+$ git remote -v
+origin  https://github.com/yashwanthkatta333/remoterepository.git (fetch)
+origin  https://github.com/yashwanthkatta333/remoterepository.git (push)
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo (master)
+$ git pull https://github.com/joshnh/Git-Commands
+remote: Enumerating objects: 183, done.
+remote: Counting objects: 100% (73/73), done.
+remote: Compressing objects: 100% (47/47), done.
+remote: Total 183 (delta 37), reused 41 (delta 26), pack-reused 110
+Receiving objects: 100% (183/183), 41.17 KiB | 8.23 MiB/s, done.
+Resolving deltas: 100% (66/66), done.
+From https://github.com/joshnh/Git-Commands
+ * branch            HEAD       -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo (master)
+$ ls
+first.txt
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo (master)
+$ git fetch ^[[200~https://github.com/joshnh/Git-Commands~
+fatal: protocol '?[200~https' is not supported
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo (master)
+$ git fetch https://github.com/joshnh/Git-Commands
+From https://github.com/joshnh/Git-Commands
+ * branch            HEAD       -> FETCH_HEAD
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo (master)
+$ ls
+first.txt
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo (master)
+$ git branch -a
+* master
+  remotes/origin/master
+
+katta yashwanth@ACER7 MINGW64 ~/vctrainingremoterepo (master)
+$ history
+    1  git version
+    2  pwd
+    3  mkdir vctrainingproject
+    4  cd vctrainingproject
+    5  git config --global user.name "yashwanthkatta333"
+    6  git config --global user.email "yashwanth.k@vigocare.com"
+    7  git config --global --list
+    8  git clone https://github.com/yashwanthkatta333/github-demo.git
+    9  ls
+   10  cd github-demo
+   11  ls
+   12  git status
+   13  echo "The First file" >> first.txt
+   14  ls
+   15  git commit -m
+   16  git commit
+   17  git add first.txt
+   18  git commit
+   19  git config --global user.name "yashwanthkatta333"
+   20  git config --global user.email "yashwanth.k@vigocare.com"
+   21  git config --global --list
+   22  ls
+   23  cd vctrainingproject
+   24  ls
+   25  cd github-demo
+   26  ls
+   27  cat first.txt
+   28  git status
+   29  git restore --staged first.txt
+   30  git status
+   31  git add first.txt
+   32  git commit -m "Adding first text file"
+   33  git status
+   34  git push origin main
+   35  cd./
+   36  cd//
+   37  cd ..
+   38  mkdir first-project
+   39  git init first-project
+   40  ls
+   41  cd .git/
+   42  cd first-project
+   43  ls
+   44  ls-all
+   45  ls
+   46  cd .git/
+   47  git status
+   48  pwd
+   49  git status
+   50  cd..
+   51  cd first-project
+   52  cd ..
+   53  git status
+   54  git add
+   55  mate tempfile.txt
+   56  ls
+   57  git status
+   58  git add demo.txt
+   59  git status
+   60  git commit
+   61  cd vctrainingproject
+   62  cd first-project
+   63  git status
+   64  git commit  -m " first commit"
+   65  git config --global user.name "yashwanthkatta333"
+   66  git config --global user.email "yashwanth.k@vigocare.com"
+   67  git config --global list
+   68  git config --global --list
+   69  git status
+   70  git push
+   71  git remote add origin https://github.com/yashwanthkatta333/first-project.git
+   72  git push -u origin main
+   73  git status
+   74  git push -u origin main
+   75  git remote add origin https://github.com/yashwanthkatta333/first-project.git
+   76  git log
+   77  git remote -v
+   78  git status
+   79  git commit -m "first project"
+   80  git push origin master
+   81   echo "first line in first project">> first file.txt
+   82  ls
+   83  status
+   84  git status
+   85  git commit -m "First file is created"
+   86  git add
+   87  git add first file.txt
+   88  git add -A
+   89  git commit -m "First file is created"
+   90  git push origi master
+   91  git push origin master
+   92  git status
+   93  git add first
+   94  git commit -m "first file is modified"
+   95  git push origin master
+   96  git checkout -b dev
+   97  git checkout master
+   98  git checkout -b dummy
+   99  git add .
+  100  git commit -m "commit in dummy branch"
+  101  git push origin dummy
+  102  echo "first updation in dummy branch" >> dummy.txt
+  103  git add .
+  104  git commit -m "first file creation in dummy branch"
+  105  git push origin dummy
+  106  git branch -a
+  107  git branch -d bugs
+  108  git branch -d  dev
+  109  git branch -a
+  110  git checkout master
+  111  ls
+  112  cd vctrainingproject
+  113  cd..
+  114  cd ..
+  115  git config --global user.name "yashwanthkatta333"
+  116  git config --global user.email "yashwanth.k@vigocare.com"
+  117  git config --global list
+  118  git config --global --list
+  119  git clone https://github.com/yashwanthkatta333/vctraining.git
+  120  cd vctraining
+  121  echo "This is the first text file created in vigocare training" >> first.txt
+  122  ls
+  123  git add .
+  124  git commit -m "creating first file"
+  125  git push origin master
+  126  git push origin main
+  127  git status
+  128  git status
+  129  git add .
+  130  git commit -m "modifying first file"
+  131  git push origin master
+  132  git push origin main
+  133  git log
+  134  git branch branch1
+  135  git checkout branch1
+  136  echo "creating first file in branch1" >> branch1file1.txt
+  137  git status
+  138  git add .
+  139  git commit -m "first branch is created"
+  140  git push origin branch1
+  141  git log
+  142  git merge branch1
+  143  git checkout main
+  144  git merge branch1
+  145  git status
+  146  git push origin main
+  147  cd ..
+  148  mkdir vctrainingremoterepo
+  149  cd vctrainingremoterepo
+  150  echo "This is the first text file created in laptop locally in training" >> first.txt
+  151  ls
+  152  git remote add origin https://github.com/yashwanthkatta333/remoterepository.git
+  153  git remote add origin https://github.com/yashwanthkatta333/remoterepository.git
+  154  git remote add origin https://github.com/yashwanthkatta333/first-project.git
+  155  git remote add origin https://github.com/yashwanthkatta333/first-project1.git
+  156  git init
+  157  git remote add origin https://github.com/yashwanthkatta333/remoterepository.git
+  158  git status
+  159  git add .
+  160  git commit -m "repository imported from local files"
+  161  git push add origin master
+  162  git push origin main
+  163  git push origin master
+  164  git log
+  165  git remote -v
+  166  git pull https://github.com/joshnh/Git-Commands
+  167  ls
+  168  git status
+  169  git fetch https://github.com/joshnh/Git-Commands~
+  170  git fetch https://github.com/joshnh/Git-Commands
+  171  ls
+  172  git branch -a
+  173  history
